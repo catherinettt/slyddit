@@ -1,6 +1,12 @@
 extends layout
 
 block content
-	div.row
-		for i in result
-			img(src="#{i["url"]}")
+	for i in result
+		div.row.centered
+			div.span9
+				img(src="#{i["url"]}")
+				p #{i["title"]}
+				a(href="http://www.reddit.com/#{i["permalink"]}") comments
+				br
+				span upvote: #{i["ups"]} | downvote: #{i["downs"]}
+				hr
