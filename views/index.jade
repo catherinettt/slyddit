@@ -1,5 +1,6 @@
 extends layout
 
 block content
-	p index
-	p #{title}
+	div.row
+		for i in result
+			img(src="#{i["url"]}")
